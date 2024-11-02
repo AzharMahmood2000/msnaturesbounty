@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Display</title>
+</head>
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+        }
+        
+        header .logo img {
+            max-height: 50px;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            gap: 15px;
+            margin: 0;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+        
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        
+        .product-display {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        
+        .product-item {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        
+        .product-item:hover {
+            transform: scale(1.02);
+        }
+        
+        /* Product Image */
+        .product-image {
+            margin-bottom: 15px;
+        }
+        
+        .product-image img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        
+        .thumbnail-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .thumbnail {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .thumbnail:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Product Details */
+        .product-details h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .product-details .price {
+            font-size: 20px;
+            color: #4CAF50;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .product-details .description {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .buy-now {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .buy-now:hover {
+            background-color: #45a049;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+        
+            .product-display {
+                grid-template-columns: 1fr;
+            }
+        }
+        </style>
+    <header>
+        <div class="logo">
+            <img src="Logo.png" alt="Logo" width="100">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="vegetables.html">Vegetables</a></li>
+                <li><a href="fruits.html">Fruits</a></li>
+                <li><a href="flour.html">Flour</a></li>
+                <li><a href="seeds.html">Seeds</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="product-display">
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="tomato.jpg" alt="Tomato" id="tomato-main">
+                    <div class="thumbnail-container">
+                        <img src="tomato.jpg" alt="Tomato" class="thumbnail" onclick="changeImage(this, 'tomato-main')">
+                        <img src="tomato-2.jpg" alt="Tomato" class="thumbnail" onclick="changeImage(this, 'tomato-main')">
+                        <img src="tomato-3.jpg" alt="Tomato" class="thumbnail" onclick="changeImage(this, 'tomato-main')">
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h1>Tomato</h1>
+                    <p class="price">$1.99 / kg</p>
+                    <p class="description">Fresh and ripe tomatoes, perfect for salads, sauces, and more. Organically grown and delivered fresh to your doorstep.</p>
+                    <button class="buy-now">Buy Now</button>
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="onion.jpg" alt="Onion" id="onion-main">
+                    <div class="thumbnail-container">
+                        <img src="onion.jpg" alt="Onion" class="thumbnail" onclick="changeImage(this, 'onion-main')">
+                        <img src="onion-2.jpg" alt="Onion" class="thumbnail" onclick="changeImage(this, 'onion-main')">
+                        <img src="onion-3.jpg" alt="Onion" class="thumbnail" onclick="changeImage(this, 'onion-main')">
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h1>Onion</h1>
+                    <p class="price">$0.99 / kg</p>
+                    <p class="description">Crisp and flavorful onions, ideal for cooking, salads, and garnishing. Freshly harvested and organically produced.</p>
+                    <button class="buy-now">Buy Now</button>
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="potato.jpg" alt="Potato" id="potato-main">
+                    <div class="thumbnail-container">
+                        <img src="potato.jpg" alt="Potato" class="thumbnail" onclick="changeImage(this, 'potato-main')">
+                        <img src="potato-2.jpg" alt="Potato" class="thumbnail" onclick="changeImage(this, 'potato-main')">
+                        <img src="potato-3.jpg" alt="Potato" class="thumbnail" onclick="changeImage(this, 'potato-main')">
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h1>Potato</h1>
+                    <p class="price">$1.49 / kg</p>
+                    <p class="description">Versatile and delicious potatoes, perfect for baking, frying, or mashing. Grown with care for your enjoyment.</p>
+                    <button class="buy-now">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Ms Nature's Bounty. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function changeImage(element, mainImageId) {
+            document.getElementById(mainImageId).src = element.src;
+        }
+    </script>
+</body>
+</html>

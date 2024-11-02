@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Categories</title>
+    <link rel="stylesheet" href="Styles1.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="Logo.png" alt="Logo" width="100" height="auto">
+        </div>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search for products...">
+            <button onclick="searchProduct()">🔍</button>
+        </div>
+        <div class="user-options">
+            <a href="login.html" class="cart">👤</a>
+            <a href="#" class="cart">🛒</a>
+    </header>
+
+    <nav>
+        
+<ul>
+
+            <li><a href="home.html">Home</a></li>
+            <li><a href="OrderTracking.html">Order Tracking</a></l>
+            <li><a href="About.html">About Us</a></li>
+        </ul>
+    </nav>
+    <script>
+        function searchProduct() {
+            const query = document.getElementById("search-input").value.toLowerCase();
+            if (query.includes("vegetable")) {
+                window.location.href = "vegetable.html";
+            } else if (query.includes("fruit")) {
+                window.location.href = "fruits.html";
+            } else if (query.includes("flour")) {
+                window.location.href = "flour.html";
+            } else if (query.includes("seed")) {
+                window.location.href = "seeds.html";
+            } else if (query.includes("medical")) {
+                window.location.href = "medicalproducts.html";
+            } else {
+                alert("Product not found. Please try searching for another item.");
+            }
+        }
+    </script>
+
+    <style>
+        .slideshow-container {
+            position: relative;
+            max-width: 300px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .slide {
+            display: none;
+            text-align: center;
+        }
+        .slide img {
+            width: 100%;
+            height: auto;
+        }
+        .slide p {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="categories slideshow-container">
+            <div class="slide">
+                <div class="category-image">
+                    <img src="vegetables 1.jpg" alt="Vegetables">
+                </div>
+                <p>Vegetables</p>
+            </div>
+            <div class="slide">
+                <div class="category-image">
+                    <img src="Fruits.jpg" alt="Fruits">
+                </div>
+                <p>Fruits</p>
+            </div>
+            <div class="slide">
+                <div class="category-image">
+                    <img src="flour.webp" alt="Flour Items">
+                </div>
+                <p>Flour Items</p>
+            </div>
+            <div class="slide">
+                <div class="category-image">
+                    <img src="seeds.jpg" alt="Seed Items">
+                </div>
+                <p>Seeds</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        let slideIndex = 0;
+
+        function showSlides() {
+            const slides = document.querySelectorAll(".slide");
+            slides.forEach(slide => slide.style.display = "none");
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1; }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000);
+        }
+        showSlides();
+    </script>
+
+        <section class="shop-by-category">
+            <h2>Shop by Category</h2>
+            <div class="shop-item">
+                <img src="vegetables 1.jpg" alt="Vegetables" >
+                <div class="category-button">
+                    <a href="vegetable.html">
+                        <button>Vegetable</button>
+                    </a>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="fruits1.jpg" alt="Fruits">
+                <div class="category-button">
+                    <a href="Fruits.html">
+                        <button>Fruits</button>
+                    </a>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="Flour1.jpg" alt="Flour">
+               <div class="category-button">
+                    <a href="Flour.html">
+                        <button>Flour</button>
+                    </a>
+                </div>
+            </div>
+            <div class="shop-item">
+            <img src="Seeds1.png" alt="Seeds">
+            <div class="category-button">
+                 <a href="Seeds.html">
+                     <button>Seeds</button>
+                 </a>
+             </div>
+         </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 MS Natures Bounty. All Rights Reserved.</p>
+        <div class="footer-links">
+            <a href="Privacypolicy.html">Privacy Policy</a>
+            <a href="FAQ.html">FAQ Management</a> 
+            <a href="Contact Us.html">Contact Us</a>
+            </div>
+            </footer>
+</body>
+</html>

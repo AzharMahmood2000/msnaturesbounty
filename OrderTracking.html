@@ -1,0 +1,111 @@
+ <style>
+    main {
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.order-tracking-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-tracking-container h2 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.order-tracking-container label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.order-tracking-container input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.order-tracking-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+.order-tracking-container button:hover {
+    background-color: #45a049;
+}
+
+.order-status {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Footer styles */
+footer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 1em;
+    color: #555;
+}
+
+.footer-links a {
+    color: #4CAF50;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+ </style>
+ <main>
+        <div class="order-tracking-container">
+            <h2>Track Your Order</h2>
+            <form id="order-tracking-form">
+                <label for="order-number">Enter Your Order Number:</label>
+                <input type="text" id="order-number" name="order-number" placeholder="Order Number" required>
+                <button type="submit">Track Order</button>
+            </form>
+            <script>
+                document.getElementById('tracking-form').addEventListener('submit', function(event) {
+                    let errors = document.querySelectorAll('.error');
+                    errors.forEach(error => error.textContent = '');
+                    document.getElementById('success-message').textContent = '';
+        
+                    let valid = true;
+                    const orderNumber = document.getElementById('order-number').value.trim();
+                    const orderNumberPattern = /^[A-Z0-9]{6,10}$/;  // Example: 6-10 alphanumeric characters
+                    if (!orderNumberPattern.test(orderNumber)) {
+                        document.getElementById('order-error').textContent = 'Please enter a valid order number (6-10 alphanumeric characters).';
+                        valid = false;
+                    }
+        
+                    const email = document.getElementById('email').value.trim();
+                    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailPattern.test(email)) {
+                        document.getElementById('email-error').textContent = 'Please enter a valid email address.';
+                        valid = false;
+                    }
+        
+                    if (valid) {
+                        document.getElementById('success-message').textContent = 'Order is being tracked...';
+                        event.preventDefault();
+                    } else {
+                        event.preventDefault(); 
+                    }
+                });
+            </script>
+           

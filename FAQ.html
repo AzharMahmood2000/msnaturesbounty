@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs - Ms Nature's Bounty</title>
+    <link rel="stylesheet" href="faq.css">
+</head>
+<body>
+    <style>body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        background-color: #f9f9f9;
+    }
+    
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+    }
+    
+    header .logo img {
+        width: 80px;
+    }
+    
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+    
+    nav a.active, nav a:hover {
+        text-decoration: underline;
+    }
+    
+    .faq-container {
+        max-width: 800px;
+        margin: auto;
+        padding: 40px 20px;
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .faq-container h1 {
+        color: #9abe0a;
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 32px;
+    }
+    
+    .faq-item {
+        margin-bottom: 15px;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    .faq-question {
+        width: 100%;
+        background-color: #0dcf37;
+        color: white;
+        padding: 15px;
+        border: none;
+        text-align: left;
+        font-size: 18px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .faq-question:hover {
+        background-color: #de1111;
+    }
+    
+    .faq-answer {
+        display: none;
+        padding: 15px;
+        font-size: 16px;
+        background-color: #dc3c3c;
+        line-height: 1.6;
+    }
+    
+    footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #3d3adc;
+        color: rgb(15, 205, 215);
+        font-size: 14px;
+    }
+    </style>
+    <main class="faq-container">
+        <h1>Frequently Asked Questions</h1>
+        
+        <div class="faq-item">
+            <button class="faq-question">What types of products do you offer?</button>
+            <div class="faq-answer">
+                <p>We offer a wide range of fresh vegetables, fruits, flour, seeds, and medicinal herbs directly sourced from farmers to ensure high quality and fair pricing.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">How do I place an order?</button>
+            <div class="faq-answer">
+                <p>You can place an order directly on our website by browsing the product categories, adding items to your cart, and completing the checkout process.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">What payment methods are accepted?</button>
+            <div class="faq-answer">
+                <p>We accept various payment methods, including credit/debit cards, online banking, and digital wallets for a seamless checkout experience.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">How is my order delivered?</button>
+            <div class="faq-answer">
+                <p>Your order is delivered directly to your doorstep using trusted delivery partners. We ensure safe packaging to preserve product freshness.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Can I return or exchange items?</button>
+            <div class="faq-answer">
+                <p>Yes, if you are unsatisfied with any product, please contact our customer support within 24 hours of receiving your order to arrange for a return or exchange.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Ms Nature's Bounty. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const questions = document.querySelectorAll(".faq-question");
+
+        questions.forEach(question => {
+            question.addEventListener("click", () => {
+                question.classList.toggle("active");
+                const answer = question.nextElementSibling;
+                answer.style.display = answer.style.display === "block" ? "none" : "block";
+            });
+        });
+    </script>
+</body>
+</html>

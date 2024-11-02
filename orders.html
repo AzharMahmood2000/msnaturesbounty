@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Now</title>
+</head>
+<style>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+}
+
+.buy-now-container {
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 18px;
+    color: #444;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.address-section, .payment-section, .order-summary {
+    margin-top: 20px;
+    text-align: left;
+}
+
+input[type="text"], input[type="tel"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="tel"]:focus, input[type="number"]:focus {
+    border-color: #4CAF50;
+}
+
+label {
+    color: #555;
+    font-size: 14px;
+    display: block;
+    margin: 5px 0;
+}
+
+input[type="radio"] {
+    margin-right: 8px;
+}
+
+.order-summary .item, .order-summary .total-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.total-price span {
+    font-weight: bold;
+    color: #333;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #f52828;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ecf3ec;
+}
+
+button:active {
+    background-color: #e01aab;
+}
+footer {
+    background-color: #e3e3e3;
+    padding: 20px;
+    text-align: center;
+    border-top: 2px solid #09d777;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #c93333;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.footer-links a:hover {
+    background-color: #07df9e;
+}
+
+.quick-links {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+* . {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e8f7e5;
+    padding: 10px 20px;
+    color: rgb(249, 232, 232);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.search-bar {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    margin: 0 20px;
+}
+
+.search-bar input {
+    width: 70%;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+.search-bar button {
+    padding: 10px 15px;
+    background-color: rgb(244, 245, 244);
+    color: #110909;
+    border: none;
+    border-radius: 10spx;
+    cursor: pointer;
+}
+
+.user-options a {
+    margin-left: 30px;
+    color: rgb(129, 242, 219);
+    text-decoration: none;
+}
+
+.cart {
+    font-size: 40px;
+}
+
+nav {
+    background-color: #6fddf0;
+    padding: 10px 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: 
+}
+
+nav ul li {
+    list-style: none;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: rgb(5, 20, 23);
+    text-decoration: none;
+}
+
+
+</style>
+<div class="buy-now-container">
+        <h2>Buy Now</h2>
+
+        <form action="orders.php" method="POST" id="order-form">
+            <div class="address-section">
+                <h3>Delivery Address</h3>
+                <input type="text" name="fullname" placeholder="Full Name" required>
+                <input type="text" name="address" placeholder="Address Line" required>
+                <input type="text" name="city" placeholder="City" required>
+                <input type="text" name="state" placeholder="State" required>
+                <input type="text" name="zipcode" placeholder="Zip Code" required>
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+            </div>
+        
+            <div class="payment-section">
+                <h3>Choose Payment</h3>
+                <label><input type="radio" name="payment" value="cash-on-delivery" required> Cash on Delivery</label><br>
+            </div>
+        
+            <div class="order-summary">
+                <h3>Order Summary</h3>
+                <div class="item">
+                    <label>Item Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" value="1" min="1" required>
+                </div>
+                <div class="total-price">
+                    <label>Total Amount:</label>
+                    <span id="total-amount"></span>
+                </div>
+                <input type="hidden" id="hidden-total" name="total" value="10.00">
+                <button type="submit">Order Now</button>
+            </div>
+        </form>
+        
+
+        <footer>
+            <p>&copy; 2024 MS Natures Bounty. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="Privacypolicy.html">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="FAQ.html">FAQ Management</a> 
+                <a href="Contact Us.html">Contact Us</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const productPrice = 10.00;
+
+        document.getElementById('quantity').addEventListener('input', function() {
+            const quantity = parseInt(this.value) || 1;
+            const total = (productPrice * quantity).toFixed(2);
+            document.getElementById('total-amount').textContent = `$${total}`;
+            document.getElementById('hidden-total').value = total; // Update hidden input
+        });
+    </script>
+
+</body>
+</html>
